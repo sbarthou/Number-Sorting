@@ -1,7 +1,8 @@
 import numpy as np
 
 
-numbers = [7, 4, 3, 1, 8, 9, 2, 0, 6, 5]
+numbers = np.arange(10)
+np.random.shuffle(numbers)
 
 def ordenado(lista):
     i = 1
@@ -26,4 +27,4 @@ while not ordenado(numbers):
 #         numbers[i] = b
 #         numbers[i+1] = a
 
-print(numbers, ordenado(numbers))
+print(numbers)
