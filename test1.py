@@ -4,12 +4,12 @@ import numpy as np
 numbers = [7, 4, 3, 1, 8, 9, 2, 0, 6, 5]
 
 def ordenado(lista):
-    i = lista[0]
-    for j in range(1, len(lista)):
-        if i > lista[j]:
-            return False
-        else:
-            return True
+    i = 1
+    while i < len(lista):
+        if lista[i] < lista[i - 1]:
+          return False
+        i += 1
+    return True
 
 while not ordenado(numbers):
     for i in range(len(numbers) - 1):
@@ -26,4 +26,4 @@ while not ordenado(numbers):
 #         numbers[i] = b
 #         numbers[i+1] = a
 
-print(numbers)
+print(numbers, ordenado(numbers))
