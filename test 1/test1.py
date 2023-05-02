@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 
 """
@@ -21,6 +22,7 @@ def ordenado(lista):   # función para deteriminar si los números están ordena
     return True
 
 n = 0   # variable para contar el número de ciclos realizados
+star = time.time()   # tiempo 0 
 while not ordenado(numbers):
     for i in range(len(numbers) - 1):
         a = numbers[i] 
@@ -30,4 +32,6 @@ while not ordenado(numbers):
             numbers[i+1] = a
     n += 1
 
-print(numbers, n)
+end = time.time()   # tiempo final luego de ordenar los números
+total = end - start   # tiempo total
+print(numbers, n, total)
