@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 import cv2
 import os
 import glob
@@ -19,9 +20,9 @@ def ordenado(lista):
 
 def graficar(X, numbers, plot_num, total, i):
     plt.plot(X, numbers)
-    plt.text(-0.3, 8.1, f'while: {n}\nfor: {i}\ntotal: {total}')
+    plt.text(-0.3, 7.8, f'while: {n}\nfor: {i}\ntotal: {total}\nFrame: {plot_num}')
     plt.xticks([])
-    plt.savefig(f'test 1/frames/plot{plot_num}.png', dpi=300)
+    plt.savefig(f'test 1/frames d/plot{plot_num}.png', dpi=300)
     plt.close ()
 
 n = 0
@@ -42,19 +43,19 @@ while not ordenado(numbers):
         
     n += 1
 
-first_image = cv2.imread('test 1/frames/plot0.png')
+first_image = cv2.imread('test 1/frames d/plot0.png')
 height, width, layers = first_image.shape
 
-video = cv2.VideoWriter('test 1/video.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 25, (width, height))
+video = cv2.VideoWriter('test 1/test1d.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 80, (width, height))
 
 for i in range(plot_num):
-    frame = cv2.imread(f'test 1/frames/plot{i}.png')
+    frame = cv2.imread(f'test 1/frames d/plot{i}.png')
     video.write(frame)
 
 cv2.destroyAllWindows()
 video.release()
 
-carpeta = 'test 1/frames/'
+carpeta = 'test 1/frames d/'
 patron = carpeta + '*.png'
 archivos = glob.glob(patron)
 

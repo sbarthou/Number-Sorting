@@ -34,5 +34,5 @@ while not ordenado(numbers):
         
     n += 1
         
-ani = animation.ArtistAnimation(fig, frames, interval=30, blit=True)
-ani.save('video.mp4')
+ani = animation.ArtistAnimation(fig, frames, interval=5, blit=True)
+ani.save('test 1/test1b.mp4')
