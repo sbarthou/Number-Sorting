@@ -30,6 +30,9 @@ n = 0
 plot_num = 0
 total = 0
 with writer.saving(fig, 'test 1/test1e.gif', 300):
+    line.set_data(X, numbers)
+    writer.grab_frame()
+    plot_num += 1
     while not ordenado(numbers):
         for i in range(len(numbers) - 1):
             a = numbers[i] 

@@ -18,7 +18,7 @@ def ordenado(lista):
 
 fig = plt.figure(figsize=(10, 6))
 plt.xticks([])
-line, = plt.plot([], [])
+line, = plt.plot(X, numbers)
 text = plt.text(0.3, (size - 5), [], fontsize=8)
 
 plt.xlim(0, size)
@@ -31,6 +31,10 @@ n = 0
 plot_num = 0
 total = 0
 with writer.saving(fig, 'test 1/test1f.mp4', 300):
+    line.set_data(X, numbers)
+    text.set_text(f'while: none\nfor: none\ntotal: none\nFrame: none')
+    writer.grab_frame()
+    plot_num += 1
     while not ordenado(numbers):
         for i in range(len(numbers) - 1):
             a = numbers[i] 

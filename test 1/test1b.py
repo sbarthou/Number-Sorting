@@ -23,6 +23,7 @@ frames = []
 
 n = 0
 while not ordenado(numbers):
+    frames.append(ax.plot(X, numbers, color='b'))
     for i in range(len(numbers) - 1):
         a = numbers[i] 
         b = numbers[i+1]
